@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+virtualenvs/
+venv/
+ENV/
+.venv/
+env/
+.env/
+.Python
+pyvenv.cfg
+.python-version
+bin/
+include/
+lib/
+lib64/
+share/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Static files
+app/static/img/uploads/
