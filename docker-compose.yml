@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./trinity-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/trinity_db
+    depends_on:
+      - db
+    volumes:
+      - ./trinity-backend:/app
+    networks:
+      - trinity-network
+
+  frontend:
+    build: ./trinity-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./trinity-frontend/src:/app/src
+      - ./trinity-frontend/public:/app/public
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - backend
+    networks:
+      - trinity-network
+
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=trinity_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - trinity-network
+
+volumes:
+  postgres_data:
+
+networks:
+  trinity-network:
+    driver: bridge
