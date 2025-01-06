@@ -28,11 +28,11 @@ We offer competitive prices and a flexible discount system.
 ## Screenshots
 
 ### Homepage
-![Homepage](assets/images/main.png)
+![Homepage](docs/images/1.png)
 *Homepage with cost calculator and key information*
 
 ### News & Promotions
-![News and Promotions](assets/images/news.png)
+![News and Promotions](docs/images/2.png)
 *Section with current news and special offers*
 
 ## Tech Stack
