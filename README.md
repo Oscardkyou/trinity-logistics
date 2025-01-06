@@ -1,185 +1,92 @@
-# Trinity Website Project
+# LogiTrans - Your Reliable Logistics Partner
 
-## Overview
-Trinity Website is a modern web application built with a React frontend and Django backend. The project aims to provide a seamless and interactive user experience while maintaining a robust and scalable backend architecture.
+LogiTrans is a modern logistics platform providing fast and reliable road and rail transportation services.
 
-## Project Structure
-The project is organized into two main directories:
-- `trinity-frontend/` - React-based frontend application
-- `trinity-backend/` - Django-based backend application
+## Key Features
 
-## Technologies Used
-### Frontend
-- React.js
-- Material-UI
-- React Router
-- Axios for API calls
-- CSS/SCSS for styling
+- **Cost Calculator** - Instant shipping cost calculation
+- **Cargo Tracking** - Real-time tracking of cargo location and status
+- **Personal Account** - Order management and access to shipping history
+- **News & Promotions** - Latest information about new routes and special offers
 
-### Backend
-- Django
-- Django REST Framework
-- PostgreSQL
-- JWT Authentication
+## Our Advantages
 
-## Getting Started
+### Speed
+We guarantee fast delivery of your cargo to any point in the country.
 
-### Prerequisites
-- Node.js (v14 or higher)
-- Python (v3.8 or higher)
-- PostgreSQL
-- pip (Python package manager)
-- npm (Node package manager)
+### Reliability
+Your cargo is insured and under constant monitoring.
 
-### Installation
+### Competitive Prices
+We offer competitive prices and a flexible discount system.
 
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/trinity-website.git
-cd trinity-website
-```
+## Latest Updates
 
-2. Backend Setup
-```bash
-cd trinity-backend
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-```
+- **New Route Opening** - New delivery route between Moscow and Vladivostok launched
+- **Fleet Update** - Acquired 10 new trucks to improve service quality
 
-3. Frontend Setup
-```bash
-cd trinity-frontend
-npm install
-npm start
-```
+## Screenshots
 
-## Features
-- User authentication and authorization
-- Responsive design
-- Interactive UI components
-- RESTful API integration
-- Database management
-- Cross-browser compatibility
+### Homepage
+![Homepage](assets/images/main.png)
+*Homepage with cost calculator and key information*
 
-## Contributing
-We welcome contributions to the Trinity Website project! Here's how you can contribute:
+### News & Promotions
+![News and Promotions](assets/images/news.png)
+*Section with current news and special offers*
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add some amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
-
-### Areas for Potential Contributions
-- Enhanced UI/UX features
-- Additional authentication methods
-- Performance optimizations
-- New API endpoints
-- Mobile responsiveness improvements
-- Unit and integration tests
-- Documentation improvements
-- Security enhancements
-- Localization support
-- Analytics integration
-- SEO optimization
-
-### Development Guidelines
-- Follow the existing code style and conventions
-- Write clear commit messages
-- Add appropriate documentation for new features
-- Ensure all tests pass before submitting PR
-- Update README.md if necessary
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details
-
-## Contact
-Project Link: [https://github.com/yourusername/trinity-website](https://github.com/yourusername/trinity-website)
-
-## Acknowledgments
-- Thanks to all contributors who participate in this project
-- Special thanks to ITC Bootcamp for the initial development
-
-## О проекте
-LogiTrans - это современная платформа для организации грузоперевозок, предоставляющая быстрые и надежные автомобильные и железнодорожные перевозки.
-
-## Основные возможности
-
-- **Расчет стоимости перевозки** - Мгновенный расчет стоимости доставки груза
-- **Отслеживание грузов** - Отслеживание местоположения и статуса груза в реальном времени
-- **Личный кабинет** - Управление заказами и доступ к истории перевозок
-- **Новости и акции** - Актуальная информация о новых маршрутах и специальных предложениях
-
-## Преимущества
-
-### Скорость
-Мы гарантируем быструю доставку вашего груза в любую точку страны.
-
-### Надежность
-Ваш груз застрахован и находится под постоянным контролем.
-
-### Выгодные цены
-Мы предлагаем конкурентные цены и гибкую систему скидок.
-
-## Последние новости
-
-- **Открытие нового маршрута** - Запущен новый маршрут доставки между городами Москва и Владивосток
-- **Обновление автопарка** - Приобретено 10 новых грузовых автомобилей для улучшения качества обслуживания
-
-## Скриншоты
-
-### Главная страница
-![Главная страница](docs/images/main.png)
-*Главная страница с калькулятором стоимости и основной информацией*
-
-### Новости и акции
-![Новости и акции](docs/images/news.png)
-*Раздел с актуальными новостями и специальными предложениями*
-
-## Технологии
+## Tech Stack
 
 - Frontend: React.js + Next.js
 - Backend: Python + FastAPI
-- База данных: PostgreSQL
-- Контейнеризация: Docker
+- Database: PostgreSQL
+- Containerization: Docker
 
-## Запуск проекта
+## Getting Started
 
-1. Клонировать репозиторий:
+1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/logitrans.git
+git clone https://github.com/Oscardkyou/trinity-logistics.git
 ```
 
-2. Запустить с помощью Docker Compose:
+2. Start with Docker Compose:
 ```bash
 docker-compose up -d
 ```
 
-3. Открыть в браузере:
+3. Access the application:
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:8000/docs
 
-## Разработка
+## Development
 
-### Требования
+### Requirements
 - Docker
 - Docker Compose
 - Node.js 18+
 - Python 3.9+
 
-### Структура проекта
+### Project Structure
 ```
-logitrans/
+trinity-logistics/
 ├── trinity-frontend/    # React + Next.js frontend
 ├── trinity-backend/     # FastAPI backend
 ├── docker-compose.yml   # Docker configuration
 └── README.md           # This file
 ```
 
-## Лицензия
+## Contributing
 
-MIT License
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+Project Link: [https://github.com/Oscardkyou/trinity-logistics](https://github.com/Oscardkyou/trinity-logistics)
