@@ -2,7 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.api.routes import auth, todos, notes, users, news
+from app.api.routes import auth, todos, notes, users
+# from app.api.v1 import news  # Temporarily disabled
 from app.db.base_class import Base
 from app.db.session import engine
 import app.models
@@ -30,7 +31,7 @@ app.include_router(auth.router, prefix="/api/v1/auth", tags=["auth"])
 app.include_router(todos.router, prefix="/api/v1/todos", tags=["todos"])
 app.include_router(notes.router, prefix="/api/v1/notes", tags=["notes"])
 app.include_router(users.router, prefix="/api/v1/users", tags=["users"])
-app.include_router(news.router, prefix="/api/v1/news", tags=["news"])
+# app.include_router(news.router, prefix="/api/v1/news", tags=["news"])  # Temporarily disabled
 
 if __name__ == "__main__":
     import uvicorn

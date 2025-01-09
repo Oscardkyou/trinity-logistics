@@ -1,0 +1,63 @@
+{
+  "common": {
+    "menu": {
+      "home": "Home",
+      "tracking": "Track Shipment",
+      "calculator": "Calculate Cost",
+      "contacts": "Contacts",
+      "orders": "My Orders",
+      "profile": "Profile",
+      "login": "Login",
+      "register": "Register"
+    },
+    "buttons": {
+      "send": "Send",
+      "calculate": "Calculate",
+      "more": "Learn More",
+      "close": "Close"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Trinity Group - International Cargo Transportation",
+      "subtitle": "Professional Logistics Solutions for Your Business"
+    },
+    "advantages": {
+      "title": "Why Choose Trinity Group",
+      "items": {
+        "network": {
+          "title": "International Network",
+          "description": "Reliable partners at key route points"
+        },
+        "fleet": {
+          "title": "Modern Fleet",
+          "description": "Own fleet of modern cargo vehicles"
+        },
+        "tracking": {
+          "title": "Online Tracking",
+          "description": "Real-time cargo tracking"
+        }
+      }
+    }
+  },
+  "contacts": {
+    "title": "Contact Us",
+    "subtitle": "We are ready to answer all your questions",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "offices": {
+      "title": "Our Offices",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Working Hours"
+    }
+  }
+}

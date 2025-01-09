@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 from pydantic import BaseModel
 
 class NewsBase(BaseModel):
@@ -15,9 +15,13 @@ class NewsUpdate(NewsBase):
     content: Optional[str] = None
 
 class NewsResponse(NewsBase):
-    id: int
+    id: Optional[int] = None  # Делаем id опциональным для внешних новостей
     created_at: datetime
     updated_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True
+
+class NewsList(BaseModel):
+    total: int
+    items: List[NewsResponse]

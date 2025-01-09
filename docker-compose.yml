@@ -14,17 +14,24 @@ services:
       - db
     volumes:
       - ./trinity-backend:/app
+      - backend_deps:/app/.venv
     networks:
       - trinity-network
 
   frontend:
-    build: ./trinity-frontend
+    build: 
+      context: ./trinity-frontend
+      args:
+        - NODE_ENV=development
     ports:
       - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
     volumes:
       - ./trinity-frontend:/app
-      - /app/node_modules
-      - /app/.next
+      - frontend_deps:/app/node_modules
+      - frontend_next:/app/.next
     depends_on:
       - backend
     networks:
@@ -45,6 +52,9 @@ services:
 
 volumes:
   postgres_data:
+  backend_deps:
+  frontend_deps:
+  frontend_next:
 
 networks:
   trinity-network:

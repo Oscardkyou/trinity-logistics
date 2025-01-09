@@ -3,7 +3,6 @@ from app.db.base_class import Base
 from app.db.session import engine, SessionLocal
 from app.models.user import User
 from app.models.news import News
-from app.core.config import settings
 
 def init_db(db: Session) -> None:
     # Создаем все таблицы

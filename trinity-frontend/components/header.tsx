@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/lib/auth-context'
+import LanguageSwitcher from './language-switcher'
 
 export default function Header() {
   const { user } = useAuth()
@@ -11,19 +12,23 @@ export default function Header() {
     <header className="bg-blue-900 text-white shadow-md">
       <nav className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-yellow-500">LogiTrans</Link>
-          <div className="space-x-4">
-            <Link href="/" className="text-white hover:text-yellow-500">Главная</Link>
-            <Link href="/tracking" className="text-white hover:text-yellow-500">Отследить</Link>
-            <Link href="/order" className="text-white hover:text-yellow-500">Заказать</Link>
-            <Link href="/contacts" className="text-white hover:text-yellow-500">Контакты</Link>
+          <Link href="/" className="text-2xl font-bold text-yellow-500">Trinity Group</Link>
+          
+          <div className="flex items-center space-x-6">
+            <div className="space-x-4">
+              <Link href="/" className="text-white hover:text-yellow-500">Главная</Link>
+              <Link href="/tracking" className="text-white hover:text-yellow-500">Отслеживание груза</Link>
+              <Link href="/order" className="text-white hover:text-yellow-500">Рассчитать стоимость</Link>
+              <Link href="/contacts" className="text-white hover:text-yellow-500">Контакты</Link>
+            </div>
+
+            <LanguageSwitcher />
             
             {user ? (
               <>
-                <Link href="/todos" className="text-white hover:text-yellow-500">Задачи</Link>
-                <Link href="/notes" className="text-white hover:text-yellow-500">Заметки</Link>
+                <Link href="/orders" className="text-white hover:text-yellow-500">Мои заказы</Link>
                 <Button asChild variant="secondary" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900">
-                  <Link href="/profile">Профиль</Link>
+                  <Link href="/profile">Личный кабинет</Link>
                 </Button>
               </>
             ) : (

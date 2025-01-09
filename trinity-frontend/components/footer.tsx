@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-wrap justify-between">
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h2 className="text-yellow-500 text-lg font-semibold mb-4">LogiTrans</h2>
+            <h2 className="text-yellow-500 text-lg font-semibold mb-4">Tranity Logistic</h2>
             <p>Ваш надежный партнер в логистике</p>
           </div>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
