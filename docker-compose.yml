@@ -28,14 +28,20 @@ services:
     environment:
       - NODE_ENV=development
       - NEXT_TELEMETRY_DISABLED=1
+      - WATCHPACK_POLLING=true
     volumes:
       - ./trinity-frontend:/app
-      - frontend_deps:/app/node_modules
-      - frontend_next:/app/.next
+      - /app/node_modules
+      - /app/.next
     depends_on:
       - backend
     networks:
       - trinity-network
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
 
   db:
     image: postgres:13
@@ -50,12 +56,12 @@ services:
     networks:
       - trinity-network
 
+networks:
+  trinity-network:
+    driver: bridge
+
 volumes:
   postgres_data:
   backend_deps:
   frontend_deps:
   frontend_next:
-
-networks:
-  trinity-network:
-    driver: bridge

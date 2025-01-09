@@ -18,9 +18,31 @@
     }
   },
   "home": {
+    "title": "Trinity Group International",
+    "subtitle": "International Cargo Transportation and Logistics",
+    "development": {
+      "notice": "News Section Under Development",
+      "description": "Company news and promotions will be available here soon"
+    },
     "hero": {
-      "title": "Trinity Group - International Cargo Transportation",
-      "subtitle": "Professional Logistics Solutions for Your Business"
+      "title": "Trinity Group - International Freight",
+      "subtitle": "Professional logistics solutions for your business",
+      "cta": "Calculate Cost"
+    },
+    "services": {
+      "title": "Our Services",
+      "air": {
+        "title": "Air Freight",
+        "description": "Fast and reliable air cargo delivery worldwide"
+      },
+      "auto": {
+        "title": "Auto Transportation",
+        "description": "Efficient cargo delivery by road across CIS countries and Europe"
+      },
+      "rail": {
+        "title": "Rail Freight",
+        "description": "Cost-effective transportation of large cargo by rail"
+      }
     },
     "advantages": {
       "title": "Why Choose Trinity Group",
@@ -40,24 +62,94 @@
       }
     }
   },
+  "tracking": {
+    "title": "Track Your Shipment",
+    "subtitle": "Enter your tracking number to get information about your shipment",
+    "placeholder": "Enter tracking number",
+    "button": "Track",
+    "development": {
+      "notice": "Tracking feature is under development",
+      "description": "We are working to make cargo tracking as convenient as possible for you. This feature will be available soon."
+    },
+    "demo": {
+      "title": "Tracking Example",
+      "tracking_number": "TG123456789",
+      "status": "In Transit",
+      "location": "Almaty, Kazakhstan",
+      "updated": "Last update: 2 hours ago"
+    }
+  },
   "contacts": {
-    "title": "Contact Us",
-    "subtitle": "We are ready to answer all your questions",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
-      "company": "Company",
-      "subject": "Subject",
-      "message": "Message",
-      "submit": "Send Message"
+    "title": "Contacts and Details",
+    "development": {
+      "notice": "Website Under Development",
+      "description": "A contact form and additional contact information will be available here soon. For now, you can reach us via Instagram or at our office addresses listed below."
     },
     "offices": {
-      "title": "Our Offices",
-      "address": "Address",
-      "phone": "Phone",
+      "title": "Our Office",
+      "almaty": {
+        "title": "Almaty Office",
+        "address": "123 Example St., Office 45",
+        "index": "050000"
+      },
+      "astana": {
+        "title": "Astana Office",
+        "address": "456 Example Ave., Office 78"
+      }
+    },
+    "requisites": {
+      "title": "Company Details",
+      "company": "Trinity Group International LLP",
+      "bin_title": "BIN",
+      "bin_value": "123456789012",
+      "bank_name": "Bank JSC",
+      "iik_title": "IIK",
+      "iik_value": "KZ123456789"
+    },
+    "form": {
+      "title": "Contact Us",
+      "name": "Your Name",
       "email": "Email",
-      "hours": "Working Hours"
+      "message": "Message",
+      "submit": "Send"
+    },
+    "social": {
+      "title": "Follow Us",
+      "instagram": "Follow us on Instagram"
+    }
+  },
+  "news": {
+    "title": "News",
+    "subtitle": "Stay updated with our latest news and updates",
+    "development": {
+      "notice": "Page Under Development",
+      "description": "We are currently working on this page. Latest news and updates will be available here soon."
+    }
+  },
+  "promotions": {
+    "title": "Promotions and Special Offers",
+    "subtitle": "Discover our current promotions and special offers",
+    "development": {
+      "notice": "Page Under Development",
+      "description": "We are currently working on this page. Current promotions and special offers will be available here soon."
+    }
+  },
+  "order": {
+    "title": "Calculate Cost",
+    "subtitle": "Find out the cost of delivering your cargo",
+    "development": {
+      "notice": "Calculator Under Development",
+      "description": "We are currently working on the cost calculator. Soon you will be able to calculate the exact cost of delivering your cargo."
+    },
+    "example": {
+      "title": "Calculation Example",
+      "from": "From",
+      "to": "To",
+      "weight": "Cargo Weight",
+      "volume": "Cargo Volume",
+      "delivery_type": "Delivery Type",
+      "standard": "Standard Delivery",
+      "total": "Total Cost"
     }
   }
 }

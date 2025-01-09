@@ -1,17 +1,18 @@
 import createMiddleware from 'next-intl/middleware';
+import { NextRequest } from 'next/server';
 import { locales, defaultLocale } from './config';
 
-// Создаем middleware для обработки локализации
-export default createMiddleware({
-  // Поддерживаемые локали
-  locales: locales,
-  // Локаль по умолчанию
-  defaultLocale: defaultLocale,
-  // Локализованные пути
-  localePrefix: 'always'
-});
+export default async function middleware(request: NextRequest) {
+  const handleI18nRouting = createMiddleware({
+    locales,
+    defaultLocale,
+    localePrefix: 'always'
+  });
+
+  const response = await handleI18nRouting(request);
+  return response;
+}
 
 export const config = {
-  // Защищаем все маршруты, кроме API и статических файлов
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
+  matcher: ['/((?!api|_next|.*\\..*).*)']
 };
