@@ -5,6 +5,9 @@ const nextConfig = {
   output: 'standalone',
   experimental: {
     forceSwcTransforms: true
+  },
+  env: {
+    NODE_ENV: 'production'
   }
 };
 

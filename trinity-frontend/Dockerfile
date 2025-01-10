@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 # Copy source code
 COPY . .
@@ -14,8 +14,9 @@ RUN npm run build
 
 EXPOSE 3000
 
+ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
