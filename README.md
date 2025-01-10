@@ -87,6 +87,6 @@ trinity-logistics/
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contact
+## Contact us
 
 Project Link: [https://github.com/Oscardkyou/trinity-logistics](https://github.com/Oscardkyou/trinity-logistics)
