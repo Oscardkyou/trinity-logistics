@@ -1,18 +1,18 @@
 import createMiddleware from 'next-intl/middleware';
-import { NextRequest } from 'next/server';
-import { locales, defaultLocale } from './config';
+import { locales } from './config';
 
-export default async function middleware(request: NextRequest) {
-  const handleI18nRouting = createMiddleware({
-    locales,
-    defaultLocale,
-    localePrefix: 'always'
-  });
-
-  const response = await handleI18nRouting(request);
-  return response;
-}
+export default createMiddleware({
+  // A list of all locales that are supported
+  locales: locales,
+  
+  // Used when no locale matches
+  defaultLocale: 'ru',
+  
+  // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
+  localePrefix: 'as-needed'
+});
 
 export const config = {
-  matcher: ['/((?!api|_next|.*\\..*).*)']
+  // Match only internationalized pathnames
+  matcher: ['/', '/(ru|en)/:path*']
 };

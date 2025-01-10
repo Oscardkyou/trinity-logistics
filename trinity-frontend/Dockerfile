@@ -1,22 +1,19 @@
-FROM node:18-alpine AS deps
+FROM node:18-alpine
 
 WORKDIR /app
 
-# Устанавливаем зависимости для сборки
-RUN apk add --no-cache libc6-compat
-
-# Копируем файлы package.json и package-lock.json
+# Install dependencies
 COPY package*.json ./
+RUN npm install
 
-# Устанавливаем зависимости
-ENV NODE_OPTIONS="--max-old-space-size=4096"
-RUN npm install --production=false --legacy-peer-deps
-
-# Копируем исходный код
+# Copy source code
 COPY . .
 
-# Экспортируем порт
+# Build application
+RUN npm run build
+
+# Expose port
 EXPOSE 3000
 
-# Запускаем приложение в dev режиме с увеличенным таймаутом
-CMD ["npm", "run", "dev", "--", "--hostname", "0.0.0.0"]
+# Start application
+CMD ["npm", "start"]
