@@ -9,10 +9,14 @@ export default createMiddleware({
   defaultLocale: 'ru',
   
   // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
-  localePrefix: 'as-needed'
+  localePrefix: 'always'
 });
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(ru|en)/:path*']
+  // Match all pathnames except for
+  // - API routes
+  // - Static files
+  // - _next
+  // - Other internal paths
+  matcher: ['/((?!api|_next|.*\\..*).*)']
 };
