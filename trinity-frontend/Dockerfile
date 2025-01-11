@@ -1,7 +1,7 @@
 FROM node:18-alpine
 
 # Устанавливаем рабочую директорию
-WORKDIR /app
+WORKDIR /app/trinity-frontend
 
 # Копируем все файлы для сборки
 COPY . .
