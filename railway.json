@@ -12,6 +12,7 @@
     "healthcheckPath": "/",
     "healthcheckTimeout": 300,
     "sleepApplication": false,
-    "numReplicas": 1
+    "numReplicas": 1,
+    "predeploy": "cd /app && npm install && npm run build"
   }
 }
