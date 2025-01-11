@@ -3,17 +3,14 @@ FROM node:18-alpine
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем package.json и package-lock.json
-COPY package*.json ./
-
-# Проверяем содержимое директории
-RUN ls -la
+# Копируем package.json и package-lock.json из trinity-frontend
+COPY trinity-frontend/package*.json ./
 
 # Устанавливаем зависимости
-RUN npm install
+RUN npm install --legacy-peer-deps
 
-# Копируем остальные файлы
-COPY . .
+# Копируем все файлы из trinity-frontend
+COPY trinity-frontend/ ./
 
 # Собираем приложение
 RUN npm run build
