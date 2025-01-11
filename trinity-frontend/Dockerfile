@@ -1,29 +1,25 @@
 FROM node:18-alpine
 
-# Проверяем начальное состояние
-RUN pwd && ls -la
-
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Проверяем директорию после WORKDIR
+# Проверяем текущую директорию
 RUN pwd && ls -la
 
 # Копируем package.json и package-lock.json
-COPY ./package.json ./package.json
-COPY ./package-lock.json ./package-lock.json
+COPY package*.json ./
 
-# Проверяем файлы после копирования
-RUN pwd && ls -la
+# Проверяем после копирования
+RUN ls -la
 
 # Устанавливаем зависимости
 RUN npm install --legacy-peer-deps
 
-# Копируем исходный код
+# Копируем все файлы проекта
 COPY . .
 
 # Проверяем все файлы
-RUN pwd && ls -la
+RUN ls -la
 
 # Устанавливаем переменные окружения для сборки
 ENV NEXT_TELEMETRY_DISABLED=1
