@@ -1,19 +1,18 @@
 FROM node:18-alpine
 
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Сначала копируем только package.json и package-lock.json
-COPY package*.json ./
+# Копируем все файлы для сборки
+COPY . .
 
 # Устанавливаем зависимости
-RUN npm install
-
-# Копируем остальные файлы
-COPY . .
+RUN npm ci
 
 # Собираем приложение
 RUN npm run build
 
+# Устанавливаем переменные окружения
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 ENV NODE_ENV=production
