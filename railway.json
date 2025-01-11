@@ -5,8 +5,11 @@
     "dockerfilePath": "./trinity-frontend/Dockerfile"
   },
   "deploy": {
-    "startCommand": "npm start",
+    "numReplicas": 1,
     "restartPolicyType": "ON_FAILURE",
-    "numReplicas": 1
+    "restartPolicyMaxRetries": 10,
+    "healthcheckTimeout": 300,
+    "healthcheckPath": "/",
+    "sleepApplication": false
   }
 }
