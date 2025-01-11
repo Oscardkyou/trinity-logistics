@@ -4,17 +4,21 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Копируем package.json и package-lock.json
-COPY trinity-frontend/package*.json ./
+COPY package*.json ./
 
 # Устанавливаем зависимости
 RUN npm install --legacy-peer-deps
 
 # Копируем исходный код
-COPY trinity-frontend/ .
+COPY . .
+
+# Проверяем содержимое директории lib
+RUN ls -la lib/
 
 # Устанавливаем переменные окружения для сборки
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ENV NEXT_PUBLIC_API_URL=http://localhost:3000
 
 # Собираем приложение
 RUN npm run build
