@@ -6,8 +6,11 @@ WORKDIR /app
 # Копируем все файлы для сборки
 COPY . .
 
+# Проверяем наличие файлов
+RUN ls -la
+
 # Устанавливаем зависимости
-RUN npm ci
+RUN npm install
 
 # Собираем приложение
 RUN npm run build
