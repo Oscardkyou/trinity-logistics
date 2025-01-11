@@ -3,17 +3,17 @@ FROM node:18-alpine
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем package.json и package-lock.json из trinity-frontend
-COPY package*.json ./
+# Копируем package.json и package-lock.json
+COPY trinity-frontend/package*.json ./
 
 # Устанавливаем зависимости
 RUN npm install --legacy-peer-deps
 
-# Копируем все файлы проекта
-COPY . ./
+# Копируем исходный код
+COPY trinity-frontend/ .
 
 # Устанавливаем переменные окружения для сборки
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
 # Собираем приложение
