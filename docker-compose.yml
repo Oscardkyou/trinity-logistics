@@ -2,14 +2,15 @@ version: '3.8'
 
 services:
   backend:
-    build: ./trinity-backend
+    build:
+      context: ./trinity-backend
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/trinity_db
-      - SECRET_KEY=your-secret-key-here
-      - ALGORITHM=HS256
-      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/trinity_db
+      SECRET_KEY: your-secret-key-here
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: 30
     depends_on:
       - db
     volumes:
@@ -19,16 +20,16 @@ services:
       - trinity-network
 
   frontend:
-    build: 
+    build:
       context: ./trinity-frontend
       args:
-        - NODE_ENV=development
+        NODE_ENV: development
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=development
-      - NEXT_TELEMETRY_DISABLED=1
-      - WATCHPACK_POLLING=true
+      NODE_ENV: development
+      NEXT_TELEMETRY_DISABLED: "1"
+      WATCHPACK_POLLING: "true"
     volumes:
       - ./trinity-frontend:/app
       - /app/node_modules
@@ -48,9 +49,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=trinity_db
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_DB: trinity_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
     networks:
@@ -63,5 +64,3 @@ networks:
 volumes:
   postgres_data:
   backend_deps:
-  frontend_deps:
-  frontend_next:
