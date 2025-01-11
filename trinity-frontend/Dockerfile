@@ -12,13 +12,10 @@ RUN npm install --legacy-peer-deps
 # Копируем исходный код
 COPY . .
 
-# Проверяем содержимое директории lib
-RUN ls -la lib/
-
 # Устанавливаем переменные окружения для сборки
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
-ENV NEXT_PUBLIC_API_URL=http://localhost:3000
+ENV NEXT_PUBLIC_API_URL=http://trinity-logistics.railway.internal
 
 # Собираем приложение
 RUN npm run build
