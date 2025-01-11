@@ -1,18 +1,13 @@
 FROM node:18-alpine
 
 # Устанавливаем рабочую директорию
-WORKDIR /app/trinity-frontend
+WORKDIR /app
 
-# Копируем все файлы для сборки
-COPY . .
-
-# Проверяем наличие файлов
-RUN ls -la
-
-# Устанавливаем зависимости
+# Копируем файлы из корневой директории
+COPY package*.json ./
 RUN npm install
 
-# Собираем приложение
+COPY . .
 RUN npm run build
 
 # Устанавливаем переменные окружения

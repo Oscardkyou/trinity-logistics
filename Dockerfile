@@ -2,11 +2,11 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Копируем файлы из frontend директории
-COPY trinity-frontend/package*.json ./
+# Копируем файлы из корневой директории
+COPY package*.json ./
 RUN npm install
 
-COPY trinity-frontend/ .
+COPY . .
 RUN npm run build
 
 ENV PORT=3000
