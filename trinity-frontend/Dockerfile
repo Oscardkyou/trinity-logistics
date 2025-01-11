@@ -3,23 +3,25 @@ FROM node:18-alpine
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Проверяем текущую директорию
-RUN pwd && ls -la
-
 # Копируем package.json и package-lock.json
 COPY package*.json ./
 
-# Проверяем после копирования
+# Проверяем файлы
 RUN ls -la
 
 # Устанавливаем зависимости
 RUN npm install --legacy-peer-deps
 
-# Копируем все файлы проекта
+# Копируем исходный код
 COPY . .
 
-# Проверяем все файлы
-RUN ls -la
+# Проверяем структуру проекта
+RUN echo "Project structure:" && \
+    ls -la && \
+    echo "\nContents of app directory:" && \
+    ls -la app || echo "No app directory" && \
+    echo "\nContents of pages directory:" && \
+    ls -la pages || echo "No pages directory"
 
 # Устанавливаем переменные окружения для сборки
 ENV NEXT_TELEMETRY_DISABLED=1
